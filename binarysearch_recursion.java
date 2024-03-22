@@ -1,8 +1,8 @@
 public class binarysearch_recursion {
     static boolean search(int arr[], int s,int e, int key) {
-        int mid = (s + e) / 2;
+        int mid = s+(e -s) / 2;
         boolean b;
-        if (!(s >= 0 && s <= arr.length - 1 && e >= 0 && e <= arr.length - 1)) {
+        if (s>e) {
             return false;
         }
         if (arr[mid] == key) {
@@ -20,7 +20,7 @@ public class binarysearch_recursion {
         int arr[] = {2,4,6,10,14,18};
         int s = 0;
         int e = arr.length-1;
-        int key = 4;
+        int key = 0;
         boolean ans = search(arr, s,e, key);
         System.out.println("key->" + key + " found status: " + ans);
     }
