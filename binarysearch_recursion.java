@@ -1,7 +1,6 @@
 public class binarysearch_recursion {
     static boolean search(int arr[], int s,int e, int key) {
         int mid = s+(e -s) / 2;
-        boolean b;
         if (s>e) {
             return false;
         }
@@ -9,12 +8,11 @@ public class binarysearch_recursion {
             return true;
         }
         else if (arr[mid] > key) {
-            b = search(arr, s, mid - 1, key);
+            return search(arr, s, mid - 1, key);
         }
         else {
-            b = search(arr, mid + 1, e, key);
+            return search(arr, mid + 1, e, key);
         }
-        return b;
     }
     public static void main(String[] args) {
         int arr[] = {2,4,6,10,14,18};
